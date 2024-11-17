@@ -1,38 +1,132 @@
-.App {
+/* Base styles */
+body {
+  background-color: #E8F5E9; /* Light Green Background */
+  font-family: Arial, sans-serif; /* Default font */
+  margin: 0;
+  padding: 0;
+}
+
+/* Plant card styling */
+.plant-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 16px;
+  width: 100%;
+  max-width: 300px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Plant name */
+.plant-card h3 {
+  color: #4CAF50; /* Green for plant name */
+  font-size: 1.5rem;
+  margin-bottom: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Image styling */
+.plant-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Plant description */
+.plant-card p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* Care Instructions */
+.plant-card h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.plant-card div p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Care button styling */
+.care-button {
+  background-color: #FF9800; /* Orange button */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.care-button:hover {
+  background-color: #FB8C00; /* Slightly darker orange on hover */
+}
+
+/* Search input styling */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 16px 0;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Plant list container */
+.plant-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 16px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .plant-list {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .plant-card {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .plant-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .plant-card p {
+    font-size: 14px;
+  }
+
+  .care-button {
+    font-size: 14px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plant-card {
+    width: 90%;
+  }
+
+  .plant-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .care-button {
+    font-size: 13px;
   }
 }
