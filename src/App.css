@@ -1,12 +1,33 @@
-/* Base styles */
+/* Global Styles */
 body {
-  background-color: #E8F5E9; /* Light Green Background */
-  font-family: Arial, sans-serif; /* Default font */
+  background-color: #E8F5E9;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Plant card styling */
+/* Heading Styles */
+h1 {
+  font-size: 2.5rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #4CAF50, #81C784);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: titleAnimation 2s ease-in-out infinite alternate;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.plant-card h3 {
+  color: #4CAF50;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+/* Plant Card Styling */
 .plant-card {
   background-color: #ffffff;
   border-radius: 8px;
@@ -18,22 +39,12 @@ body {
   text-align: center;
 }
 
-/* Plant name */
-.plant-card h3 {
-  color: #4CAF50; /* Green for plant name */
-  font-size: 1.5rem;
+.plant-card h4 {
+  font-size: 1.2rem;
+  color: #333;
   margin-bottom: 8px;
 }
 
-/* Image styling */
-.plant-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 16px;
-}
-
-/* Plant description */
 .plant-card p {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -42,45 +53,136 @@ body {
   margin-bottom: 16px;
 }
 
-/* Care Instructions */
-.plant-card h4 {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 8px;
-}
-
 .plant-card div p {
   font-size: 14px;
   color: #555;
 }
 
-/* Care button styling */
+/* Image Styling */
+.plant-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* Care Instructions Button */
 .care-button {
-  background-color: #FF9800; /* Orange button */
-  color: #fff;
+  background-color: #FF9800;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
+  margin-top: 10px;
   transition: background-color 0.3s ease;
 }
 
 .care-button:hover {
-  background-color: #FB8C00; /* Slightly darker orange on hover */
+  background-color: #FB8C00;
 }
 
-/* Search input styling */
-input[type="text"] {
+/* Add/Delete Plant Button */
+.add-plant-button,
+.delete-plant-button {
+  background-color: #FF9800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.add-plant-button:hover,
+.delete-plant-button:hover {
+  background-color: #FB8C00;
+}
+
+.delete-plant-button {
+  background-color: #ff4d4d;
+}
+
+.delete-plant-button:hover {
+  background-color: #e60000;
+}
+
+/* Form Styles */
+form {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+/* Input Fields Styling */
+input[type="text"],
+select {
   width: 100%;
   padding: 10px;
   margin: 16px 0;
   font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+select {
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+/* Search and Filter Input */
+input[type="text"] {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-/* Plant list container */
+select {
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #4caf50;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  border-color: #2e7d32;
+}
+
+select:focus {
+  border-color: #1b5e20;
+  background-color: #e8f5e9;
+}
+
+/* Plant List Styling */
 .plant-list {
   display: flex;
   flex-wrap: wrap;
@@ -108,12 +210,8 @@ input[type="text"] {
     font-size: 14px;
   }
 
-  .care-button {
-    font-size: 14px;
-  }
-
-  input[type="text"] {
-    font-size: 14px;
+  select {
+    width: 100%;
   }
 }
 
@@ -124,9 +222,5 @@ input[type="text"] {
 
   .plant-card h3 {
     font-size: 1.1rem;
-  }
-
-  .care-button {
-    font-size: 13px;
   }
 }
